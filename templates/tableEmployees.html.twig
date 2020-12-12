@@ -16,7 +16,7 @@
             <td>{{ printFullName(e.firstName,e.lastName) }}</td>
             <td>{{ e.gender }}</td>
             <td>{{ e.birthday|date('d-m-Y') }}</td>
-            <td>{% for title in e.title %}{{ printPrettyRole(title.name) }}, {% endfor %}</td>
+            <td>{% for title in e.title %}{{ printPrettyRole(title.name) }}{% if e.title|length != loop.index %}, {% endif %} {% endfor %}</td>
             <td>{% if e.active == true %}Active{% else %}Not active{% endif %}</td>
         </tr>
     {% endfor %}
