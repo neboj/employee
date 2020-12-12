@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/homepage.css') }}"/>
+{% endblock %}
+{% block body %}
+    {{ parent() }}
+
+    <h1 class="post-title">Homepage</h1>
+
+    <div>
+        <ul>
+            <li><a href="{{ path('employees') }}">List of all employees</a></li>
+            <li><a href="{{ path('new_employee') }}">Add a new employee</a></li>
+        </ul>
+    </div>
+
+
+
+{% endblock %} {#END BODY#}

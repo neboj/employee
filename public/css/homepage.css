@@ -1,0 +1,13 @@
+main h1 {
+    margin-bottom: 40px;
+}
+
+main a {
+    color: var(--mint-dark-green-color);
+
+}
+
+main a:hover {
+    color: var(--navy-blue-color);
+    text-decoration: none;
+}

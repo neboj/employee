@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ parent() }}
+
+    <h1 class="post-title">Employees</h1>
+    <h2 class="post-subtitle">This is the list of all employees.</h2>
+
+    <div class="table-container">
+    {% include 'tableEmployees.html.twig' %}
+    </div>
+    <div>
+        <input type="radio" id="all" name="activeInactivAll" value="all" checked>
+        <label for="all">All</label><br>
+        <input type="radio" id="active" name="activeInactivAll" value="active">
+        <label for="active">Active</label><br>
+        <input type="radio" id="inactive" name="activeInactivAll" value="inactive">
+        <label for="inactive">Inactive</label>
+    </div>
+{% endblock %} {#END BODY#}
+
+{% block javascripts %}
+    <script src="{{ asset('js/employees.js') }}"></script>
+{% endblock %}

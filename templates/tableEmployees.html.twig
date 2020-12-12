@@ -1,0 +1,24 @@
+<table class="table employees-list">
+    <thead class="thead-orange">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">Title</th>
+        <th scope="col">Active</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for e in employees %}
+        <tr>
+            <th scope="row">{{ loop.index }}</th>
+            <td>{{ printFullName(e.firstName,e.lastName) }}</td>
+            <td>{{ e.gender }}</td>
+            <td>{{ e.birthday|date('d-m-Y') }}</td>
+            <td>{% for title in e.title %}{{ printPrettyRole(title.name) }}, {% endfor %}</td>
+            <td>{% if e.active == true %}Active{% else %}Not active{% endif %}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

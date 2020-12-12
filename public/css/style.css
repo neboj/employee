@@ -1,0 +1,115 @@
+:root {
+    --navy-blue-color: #555b6e;
+    --mint-green-color: #bee3db;
+    --mint-dark-green-color: #89b0ae;
+    --light-color: #faf9f9;
+    --orange-color: #ffd6ba;
+
+}
+
+body, h1, h2, h3,h4,h5,h6, p {
+    font-family: 'Quicksand', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+header {
+    display:flex;
+    background:var(--mint-green-color);
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+header .logo {
+    flex:1;
+    display:flex;
+    justify-content: flex-start;
+    font-size: 32px;
+    color:var(--navy-blue-color);
+    margin-left:10%;
+}
+header nav {
+    flex:1;
+    margin-right:10%;
+}
+
+header nav ul {
+    display:flex;
+    justify-content: space-between;
+    list-style-type:none;
+    color:white;
+}
+
+header nav ul li a {
+    color:var(--navy-blue-color);
+    text-decoration: none;
+}
+
+main {
+    padding-top: 40px;
+    margin: 0 10%;
+    background: var(--light-color);
+}
+
+header ol,
+header ul,
+header dl {
+    margin: initial;
+}
+
+.thead-orange {
+    background: var(--orange-color);
+}
+
+.post-subtitle {
+    margin-bottom: 40px;
+}
+
+p.form-error,
+#error-js{
+    color: red;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.gender_container label {
+    font-size: 14px;
+}
+
+label {
+    width:200px;
+}
+
+input[type=submit] {
+    background: var(--orange-color);
+    border: 1px solid var(--orange-color);
+    padding: 10px 40px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background: #ffa76c;
+}
+
+#success {
+    color:white;
+    background: var(--mint-dark-green-color);
+    margin-bottom: 20px;
+}
+#success.active {
+    padding:10px;
+}
+
+#title-container {
+    margin-bottom:40px;
+}
+
+.label-title {
+    width: initial;
+}
+
+.ajax-response:hover {
+    cursor:pointer;
+    color:var(--mint-green-color);
+}

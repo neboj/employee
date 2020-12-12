@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ parent() }}
+
+    <h1 class="post-title">New Employee</h1>
+    <h2 class="post-subtitle">Create a new employee data.</h2>
+
+    <div class="row">
+        <div class="col s12 create-team-form">
+            <div id="success" class="{% if success == 'success' %}active{% endif %}">{{ success }}</div>
+            <div id="error-js"></div>
+            <form id="new-employee-form" action="{{ path('handle_form') }}">
+                <div>
+                    <label for="first_name">First Name</label>
+                    <input id="first_name" name="first_name" type="text">
+                    <p class="form-error">{% if errors and errors.first_name is defined %}{{ errors.first_name }}{% endif %}</p>
+                </div>
+                <div>
+                    <label for="last_name">Last Name</label>
+                    <input id="last_name" name="last_name" type="text">
+                    <p class="form-error">{% if errors and errors.last_name is defined  %}{{ errors.last_name }}{% endif %}</p>
+
+                </div>
+                <div>
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday">
+                    <p class="form-error">{% if errors and errors.birthday is defined %}{{ errors.birthday }}{% endif %}</p>
+                </div>
+                <div class="gender_container">
+                    <p>Gender</p>
+                    <select class="js-example-basic-single" name="gender">
+                    {% for gender in printGenders() %}
+                        <label for="{{ gender.type }}">{{ gender.type }}</label>
+
+                        <option value="{{ gender.id }}">{{ gender.type }}</option>
+{#                        <div>#}
+{#                            <input type="radio" id="{{ gender.type }}" name="gender" value="{{ gender.id }}" {% if loop.index == 1 %}checked{% endif %}>#}
+{#                            <label for="{{ gender.type }}">{{ gender.type }}</label>#}
+{#                        </div>#}
+                    {% endfor %}
+                    </select>
+
+                    <p class="form-error">{% if errors and errors.gender is defined %}{{ errors.gender }}{% endif %}</p>
+                </div>
+                <div>
+                    <input class="activeInactive" type="hidden" name="active" value="0"><input class="activeInactive" type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value">
+
+{#                    <input type="checkbox" id="active" name="active" value="0">#}
+                    <label for="active">active</label>
+                </div>
+                <div id="title-container">
+                    <input id="title" type="text" name="title" hidden><span id="chosen-titles"></span>
+                    <div id="title-response">
+                        <label class="label-title" for="title" >Title (ex: ROLE_DEV, ROLE_HR...)</label>
+                        <select  id="title" class="js-example-basic-multiple js-example-placeholder-multiple js-states form-control js-data-example-ajax" name="states[]" multiple="multiple">
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+{% endblock %} {#END BODY#}
+
+{% block javascripts %}
+    <script src="{{ asset('js/newEmployee.js') }}"></script>
+{% endblock %}
