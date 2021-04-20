@@ -7,3 +7,5 @@ Symfony and Select2 project;
 Homepage,
 Add New Employee (with js and php validation),
 All Employees (with search and filter based on role)
+
+// start route http://localhost/Employee/public/index.php
